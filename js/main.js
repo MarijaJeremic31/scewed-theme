@@ -14,5 +14,14 @@ $('.navbar-nav a').click(function(){
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 2000);
 });
+
+
+if($('.bxslider').length > 0){
+    $('.lead-slider').bxSlider();
+}
+
+
+
+
     
 });
