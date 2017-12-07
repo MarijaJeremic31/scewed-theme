@@ -18,6 +18,7 @@ $('.navbar-nav a').click(function(){
 
 if($('.bxslider').length > 0){
     $('.lead-slider').bxSlider();
+    $('.testimonial-slider').bxSlider();
 }
 
 function animation(){
@@ -86,6 +87,30 @@ $('.portfolio-slider').owlCarousel({
     }
 });
 }
-
+$(window).scroll(function(){
+    var wh = $(window).height();
+    var scroll =$(window).scrollTop();
     
+    $('.count').each(function () {
+        var position = $(this).offset().top;
+        if(position < wh + scroll - 100){
+            $(this).prop('Counter', 0).animate({
+             
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });  
+            
+        }
+  
+    
+});
+});
+ 
+ 
+ 
 });
